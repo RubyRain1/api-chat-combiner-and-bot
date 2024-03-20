@@ -1,15 +1,66 @@
 from typing import Optional, TYPE_CHECKING, Dict
-from .abcs import Messageable
-from .enums import PredictionEnum
+
+from abcs import Messageable
+from enums import PredictionEnum
 
 if TYPE_CHECKING:
-    from .user import User
-    from .websocket import WSConnection
+    from user import User
+    from websocket import WSConnection
+
+
+__all__ = ("PartialChatter", "Chatter")
+
 
 class PartialChatter(Messageable):
     __messageable_channel__ = False
 
+    def __init__(self, websocket, **kwargs):
+        self._name = kwargs.get("name")
+        self._ws = websocket
+        self._channel = kwargs.get("channel", self._name)
+        self._message = kwargs.get("message")
 
+    def __repr__(self):
+        return f"<PartialChatter name: {self._name}, channel: {self._channel}>"
+
+    def __eq__(self, other):
+        return other.name == self.name and other.channel.name == other.channel.name
+
+    def __hash__(self):
+        return hash(self.name + self.channel.name)
+
+    async def user(self) -> "User":
+        """|coro|
+
+        Fetches a :class:`twitchio.User` object based off the chatters channel name
+
+        Returns
+        --------
+            :class:`twitchio.User`
+        """
+        return (await self._ws._client.fetch_users(names=[self.name]))[0]
+
+    @property
+    def name(self):
+        """The users name"""
+        return self._name
+
+    @property
+    def channel(self):
+        """The channel associated with the user."""
+        return self._channel
+
+    def _fetch_channel(self):
+        return self  # Abstract method
+
+    def _fetch_websocket(self):
+        return self._ws  # Abstract method
+
+    def _fetch_message(self):
+        return self._message  # Abstract method
+
+    def _bot_is_mod(self):
+        return False
 
 
 class Chatter(PartialChatter):
@@ -159,3 +210,26 @@ class Chatter(PartialChatter):
             return PredictionEnum("pink-2")
 
         return None
+
+
+class WhisperChatter(PartialChatter):
+    __messageable_channel__ = False
+
+    def __init__(self, websocket: "WSConnection", **kwargs):
+        super().__init__(websocket, **kwargs)
+
+    def __repr__(self):
+        return f"<WhisperChatter name: {self._name}>"
+
+    @property
+    def channel(self):
+        return None
+
+    def _fetch_channel(self):
+        return self  # Abstract method
+
+    def _fetch_websocket(self):
+        return self._ws  # Abstract method
+
+    def _bot_is_mod(self):
+        return False

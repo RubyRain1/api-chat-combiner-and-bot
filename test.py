@@ -1,0 +1,161 @@
+from typing import Optional, TYPE_CHECKING, Dict
+from .abcs import Messageable
+from .enums import PredictionEnum
+
+if TYPE_CHECKING:
+    from .user import User
+    from .websocket import WSConnection
+
+class PartialChatter(Messageable):
+    __messageable_channel__ = False
+
+
+
+
+class Chatter(PartialChatter):
+    __slots__ = (
+        "_name",
+        "_channel",
+        "_tags",
+        "_badges",
+        "_cached_badges",
+        "_ws",
+        "_id",
+        "_turbo",
+        "_sub",
+        "_mod",
+        "_display_name",
+        "_colour",
+    )
+
+    __messageable_channel__ = False
+
+    def __init__(self, websocket: "WSConnection", **kwargs):
+        super(Chatter, self).__init__(websocket, **kwargs)
+        self._tags = kwargs.get("tags", None)
+        self._ws = websocket
+
+        self._cached_badges: Optional[Dict[str, str]] = None
+
+        if not self._tags:
+            self._id = None
+            self._badges = None
+            self._turbo = None
+            self._sub = None
+            self._mod = None
+            self._display_name = None
+            self._colour = None
+            self._vip = None
+            return
+
+        self._id = self._tags.get("user-id")
+        self._badges = self._tags.get("badges")
+        self._turbo = self._tags.get("turbo")
+        self._sub = int(self._tags["subscriber"])
+        self._mod = int(self._tags["mod"])
+        self._display_name = self._tags["display-name"]
+        self._colour = self._tags["color"]
+        self._vip = int(self._tags.get("vip", 0))
+
+        if self._badges:
+            self._cached_badges = dict([badge.split("/") for badge in self._badges.split(",")])
+
+    def __repr__(self):
+        return f"<Chatter name: {self._name}, channel: {self._channel}>"
+
+    def _bot_is_mod(self):
+        cache = self._ws._cache[self._channel.name]  # noqa
+        for user in cache:
+            if user.name == self._ws.nick:
+                try:
+                    mod = user.is_mod
+                except AttributeError:
+                    return False
+
+                return mod
+
+    @property
+    def name(self) -> str:
+        """The users name. This may be formatted differently than display name."""
+        return self._name or (self.display_name and self.display_name.lower())
+
+    @property
+    def badges(self) -> dict:
+        """The users badges."""
+        return self._cached_badges.copy() if self._cached_badges else {}
+
+    @property
+    def display_name(self) -> Optional[str]:
+        """The user's display name."""
+        return self._display_name
+
+    @property
+    def id(self) -> Optional[str]:
+        """The user's id."""
+        return self._id
+
+    @property
+    def mention(self) -> str:
+        """Mentions the users display name by prefixing it with '@'"""
+        return f"@{self._display_name}"
+
+    @property
+    def colour(self) -> str:
+        """The users colour. Alias to color."""
+        return self._colour
+
+    @property
+    def color(self) -> str:
+        """The users color."""
+        return self.colour
+
+    @property
+    def is_broadcaster(self) -> bool:
+        """A boolean indicating whether the User is the broadcaster of the current channel."""
+
+        return "broadcaster" in self.badges
+
+    @property
+    def is_mod(self) -> bool:
+        """A boolean indicating whether the User is a moderator of the current channel."""
+        return True if self._mod == 1 else self.channel.name == self.name.lower()
+
+    @property
+    def is_vip(self) -> bool:
+        """A boolean indicating whether the User is a VIP of the current channel."""
+        return bool(self._vip)
+
+    @property
+    def is_turbo(self) -> Optional[bool]:
+        """A boolean indicating whether the User is Turbo.
+
+        Could be None if no Tags were received.
+        """
+        return self._turbo
+
+    @property
+    def is_subscriber(self) -> bool:
+        """A boolean indicating whether the User is a subscriber of the current channel.
+
+        .. note::
+
+            changed in 2.1.0: return value is no longer optional. founders will now appear as subscribers
+        """
+        return bool(self._sub) or "founder" in self.badges
+
+    @property
+    def prediction(self) -> Optional[PredictionEnum]:
+        """
+        The users current prediction, if one exists.
+
+        Returns
+        --------
+        Optional[:class:`twitchio.enums.PredictionEnum`]
+        """
+        if "blue-1" in self.badges:
+            return PredictionEnum("blue-1")
+
+        elif "pink-2" in self.badges:
+            return PredictionEnum("pink-2")
+
+        return None

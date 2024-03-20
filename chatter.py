@@ -21,7 +21,7 @@ class PartialChatter(Messageable):
         self._message = kwargs.get("message")
 
     def __repr__(self):
-        return f"<PartialChatter name: {self._name}, channel: {self._channel}>"
+        return f"<PartialChatter name: {self._name}, {self._channel}>"
 
     def __eq__(self, other):
         return other.name == self.name and other.channel.name == other.channel.name
@@ -112,7 +112,7 @@ class Chatter(PartialChatter):
             self._cached_badges = dict([badge.split("/") for badge in self._badges.split(",")])
 
     def __repr__(self):
-        return f"<{self._name}:, channel: {self._channel}>"
+        return f"<{self._name}:, {self._channel}>"
 
     def _bot_is_mod(self):
         cache = self._ws._cache[self._channel.name]  # noqa

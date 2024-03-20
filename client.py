@@ -941,7 +941,7 @@ class Client:
 
         Parameters
         ------------
-        channel: :class:`.Channel`
+        :class:`.Channel`
             The channel associated with the JOIN.
         user: :class:`.User`
             User object containing relevant information to the JOIN.
@@ -1035,7 +1035,7 @@ class Client:
 
         Parameters
         ----------
-        channel: :class:`.Channel`
+         :class:`.Channel`
             The channel that was joined.
         """
         pass
@@ -1047,7 +1047,7 @@ class Client:
 
         Parameters
         ----------
-        channel: `str`
+         `str`
             The channel name that was attempted to be joined.
         """
         logger.error(f'The channel "{channel}" was unable to be joined. Check the channel is valid.')
@@ -1090,7 +1090,7 @@ class Client:
             The message of the NOTICE.
         msg_id: Optional[:class:`str`]
             The msg_id that indicates what the NOTICE type.
-        channel: Optional[:class:`~twitchio.Channel`]
+         Optional[:class:`~twitchio.Channel`]
             The channel the NOTICE message originated from.
 
         Example

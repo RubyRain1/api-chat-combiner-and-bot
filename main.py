@@ -79,7 +79,7 @@ class Bot(commands.Bot):
         if message.echo:
             return
         
-        print(f'{message._channel} content: {message.content}')
+        print(f'{message._author}, {message.content}')
        
        
         

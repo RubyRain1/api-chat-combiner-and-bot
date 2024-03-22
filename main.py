@@ -11,13 +11,8 @@ if TYPE_CHECKING:
 result = input("Enter your channel name: ")
 count = 0
 val = result
-val4 = ""
-val5 = ""
-val6= ""
-val7 = ""
-val8 = ""
-val9 = ""
-val10 = ""
+
+
 
 
 if result != "" and val != "":
@@ -26,15 +21,15 @@ if result != "" and val != "":
     if result != "" and val2 != "":
         result = ("enter next channel name: ")
         val3 = result
-        if result != "" and val3 != "":
-            print("hehe")
+       
+            
 
 
 class Bot(commands.Bot):
     
     def __init__(self):
 
-        super().__init__(token=config.api_key, prefix='?', initial_channels=[val,val2])
+        super().__init__(token=config.api_key, prefix='?', initial_channels=[val,val2,val3])
         
    
 

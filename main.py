@@ -34,6 +34,9 @@ class Bot(commands.Bot):
     async def hello(self, ctx: commands.Context):
         await ctx.send(f'Hello {ctx.author.name}')
 
+    @commands.command()
+    async def cookie(self, ctx: commands.Context):
+        await ctx.send(f'{ctx.author.name} gets a cookie!!!')
 
 bot = Bot()
 bot.run()

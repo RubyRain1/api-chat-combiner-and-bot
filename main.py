@@ -23,7 +23,10 @@ class Bot(commands.Bot):
         if message.echo:
             return
         
-        print(f'{message.author.display_name}: {message.content}')
+        rAuthor = message.author.display_name
+        rContent = message.content
+
+        print(f'{rAuthor}: {rContent}')
 
         await self.handle_commands(message)
 

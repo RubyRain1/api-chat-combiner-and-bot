@@ -8,19 +8,8 @@ if TYPE_CHECKING:
     from user import User
     from websocket import WSConnection
     
-result = input("Enter your channel name: ")
-count = 0
-val = result
-
-
-
-
-if result != "" and val != "":
-    result = input("enter next channel name: ")
-    val2 = result
-    if result != "" and val2 != "":
-        result = ("enter next channel name: ")
-        val3 = result
+val = input("Enter your channel name: ")
+val2 = input("Enter second channel's name: ")
        
             
 
@@ -29,7 +18,7 @@ class Bot(commands.Bot):
     
     def __init__(self):
 
-        super().__init__(token=config.api_key, prefix='?', initial_channels=[val,val2,val3])
+        super().__init__(token=config.api_key, prefix='?', initial_channels=[val,val2])
         
    
 

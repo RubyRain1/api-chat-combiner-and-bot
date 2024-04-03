@@ -4,8 +4,6 @@ import random
 
 #twitch username input
 val = input("Enter your channel name: ")
-val2 = input("Enter second channel's name: ")
-
 
 class Bot(commands.Bot):
     
@@ -14,7 +12,7 @@ class Bot(commands.Bot):
     def __init__(self):
 
         #chat connection
-        super().__init__(token=config.api_key, prefix='?', initial_channels=[val,val2])
+        super().__init__(token=config.api_key, prefix='?', initial_channels=[val])
         
     async def event_message(self, messagae):
 
@@ -50,12 +48,23 @@ class Bot(commands.Bot):
     
     @commands.command()
     async def milk(self, ctx: commands.Context):
-        milk = round(random.uniform(99,100), 2)
-        if (milk >= 99):
-           mMilk = "you get the all fated choccy milk"
-           await ctx.send(f'{ctx.author.name} {mMilk}')
-        else:
-            await ctx.send(f'you lose {milk}')
+        #this is going to be the random logic for the command.
+
+        milk = round(random.uniform(1,100), 2) 
+        if(milk <= 33.33): 
+            mMilk = "you get the all fated choccy milk"
+            await ctx.send(f'{ctx.author.name} {mMilk}')
+            
+      #  match milk:
+           # case range(0,90):
+             #   mMilk = "you get strawberry milk"
+               # await ctx.send(f'{ctx.author.name} {mMilk}')
+
+           # case 100: 
+              #  mMilk = "you get strawberry milk"
+               # await ctx.send(f'{ctx.author.name} {mMilk}')
+
+            
             
     #black jack command?
     

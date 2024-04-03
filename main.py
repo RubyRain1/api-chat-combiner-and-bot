@@ -6,6 +6,7 @@ import random
 val = input("Enter your channel name: ")
 val2 = input("Enter second channel's name: ")
 
+
 class Bot(commands.Bot):
     
     

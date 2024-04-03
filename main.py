@@ -75,6 +75,21 @@ class Bot(commands.Bot):
             await ctx.send(f'{ctx.author.name} {mMilk}')
                  
     #black jack command?
-    
+    @commands.command()
+    async def BJ(self, ctx: commands.Context):
+        dCard = random.randint(17,21)
+        pCard1 = random.randint(1,11)
+        pCard2 = random.randint(1,11)
+        pTotal = pCard1 + pCard2
+        
+        if dCard < pTotal:
+            await ctx.send(f'the dealer drew {dCard}, {ctx.author.name} pulled {pTotal} YOU WINNNNN')
+        else:
+            await ctx.send(f'the dealer drew {dCard}, {ctx.author.name} pulled {pTotal} YOU LOSE WOMP WOMP')
+      
+        
+
+
+
 bot = Bot()
 bot.run()

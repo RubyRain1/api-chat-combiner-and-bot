@@ -19,14 +19,14 @@ print("this app is used to convert up to 10 chats into one by inputting channel 
 "looking to have a cleaner chat experience during collabs! MUST HAVE COLLAB STREAMS OPEN " 
 "(support your fellow streamers even in a collab).")
 print(" ") #this just adds a space
-start = input("would you like to begin using the program? (Y/N)")
+start = input("would you like to begin using the program? (Y/N) ")
 print(" ")
 match start:
-    case "no":
+    case "n":
         print("thank you for taking the time to check out my chat maker it means the world to me :D - Ruby Rain <3")
 
 
-    case "yes":
+    case "y":
 #twitch username input
         val = input("Enter your channel name: ")
 

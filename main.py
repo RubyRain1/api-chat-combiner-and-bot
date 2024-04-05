@@ -11,14 +11,12 @@ print(((((""""
     | \ \ /\ / / | __/ __| '_ \  | |    | '_ \ / _` | __| | |    / _ \| '_ ` _ \| '_ \| | '_ \ / _ \ '__|
     | |\ V  V /| | || (__| | | | | |____| | | | (_| | |_  | |___| (_) | | | | | | |_) | | | | |  __/ |   
     |_| \_/\_/ |_|\__\___|_| |_|  \_____|_| |_|\__,_|\__|  \_____\___/|_| |_| |_|_.__/|_|_| |_|\___|_|   
-                                                                                                         
 
-
+                                                                                                           
    """"")))))  
 
 print("this app is used to convert up to 10 chats into one by inputting channel names. This is helpful for any twitch streamer"
-"looking to have a cleaner chat experience during collabs! MUST HAVE COLLAB STREAMS OPEN " 
-"(support your fellow streamers even in a collab).")
+" looking to have a cleaner chat experience during collabs!")
 print(" ") #this just adds a space
 start = input("would you like to begin using the program? (Y/N) ")
 print(" ")

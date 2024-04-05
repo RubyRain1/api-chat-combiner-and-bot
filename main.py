@@ -5,12 +5,13 @@ import random
 
 # this is the introduction of a terminal based ui incase I cannot implement a working GUI
 print(((((""""
-  _______       _ _       _            _           _                                   _            
- |__   __|     (_) |     | |          | |         | |                                 | |           
-    | |_      ___| |_ ___| |__     ___| |__   __ _| |_    ___ ___  _ ____   _____ _ __| |_ ___ _ __ 
-    | \ \ /\ / / | __/ __| '_ \   / __| '_ \ / _` | __|  / __/ _ \| '_ \ \ / / _ \ '__| __/ _ \ '__|
-    | |\ V  V /| | || (__| | | | | (__| | | | (_| | |_  | (_| (_) | | | \ V /  __/ |  | ||  __/ |   
-    |_| \_/\_/ |_|\__\___|_| |_|  \___|_| |_|\__,_|\__|  \___\___/|_| |_|\_/ \___|_|   \__\___|_|   
+ _________      _         _        _____ _           _      _____                _     _                 
+ |__   __|     (_) |     | |      / ____| |         | |    / ____|              | |   (_)                
+    | |_      ___| |_ ___| |__   | |    | |__   __ _| |_  | |     ___  _ __ ___ | |__  _ _ __   ___ _ __ 
+    | \ \ /\ / / | __/ __| '_ \  | |    | '_ \ / _` | __| | |    / _ \| '_ ` _ \| '_ \| | '_ \ / _ \ '__|
+    | |\ V  V /| | || (__| | | | | |____| | | | (_| | |_  | |___| (_) | | | | | | |_) | | | | |  __/ |   
+    |_| \_/\_/ |_|\__\___|_| |_|  \_____|_| |_|\__,_|\__|  \_____\___/|_| |_| |_|_.__/|_|_| |_|\___|_|   
+                                                                                                         
 
 
    """"")))))  
@@ -22,16 +23,104 @@ print(" ") #this just adds a space
 start = input("would you like to begin using the program? (Y/N) ")
 print(" ")
 
-val = input("Enter your channel name: ")
-val2 = input("Enter second channel's name: ")
+count = 0 #increment up each time in order to trigger different itterations of super.__init__ 
+
+val = input("Enter your channel name: ") # this is the initial channel value as it is assumed you will always be combining your chat
+
+#these are used to get user input for up to 10 channels.
+userI = input("would you like to add another channel? ")
+userI2 = ""
+userI3 = ""
+userI4 = ""
+userI5 = ""
+userI6 = ""
+userI7 = ""
+userI8 = ""
+userI9 = ""
+
+
+if userI == "n": 
+    print("bot functionality beginning")
+    count = 0
+elif userI == "y":
+    val2 = input("Enter second channel's name: ")
+    count = count + 1
+    userI2 = input("would you like to add a third channel? ")
+    if userI2 == "n":
+        print(count)
+    elif userI2 == "y":
+        val3 = input("enter third channel's name: ")
+        count = count + 1
+        userI3 = input("would you like to add a fourth channel? ")
+        if userI3 == "n":
+            print(count)
+        elif userI3 == "y":
+            val4 = input("enter fourth channel's name: ")
+            count = count + 1
+            userI4 = input("would you like to add a fifth channel? ")
+            if userI4 == "n":
+                print(count)
+            elif userI4 == "y":
+                val5 = input("enter fifth channel's name: ")
+                count = count + 1
+                userI5 = input("would you like to add a sixth channel? ")
+                if userI5 == "n":
+                    print(count)
+                elif userI5 == "y":
+                        val6 = input("enter sixth channel's name: ")
+                        count = count + 1
+                        userI6 = input("would you like to add a seventh channel? ")
+                        if userI6 == "n": 
+                            print(count)
+                        elif userI6 == "y":
+                            val7 = input("enter seventh channel's name: ")
+                            count = count + 1
+                            userI7 = input("would you like to add a eighth channel? ")
+                            if userI7 == "n":
+                                print(count)
+                            elif userI7 == "y":
+                                val8 = input("enter eighth channel's name: ")
+                                count = count + 1
+                                userI8 = input("would you like to add a ninth channel? ")
+                                if userI8 == "n":
+                                    print(count)
+                                elif userI8 == "y":
+                                    val9 = input("enter ninth channel's name: ")
+                                    count = count + 1
+                                    userI9 = input("would you like to add a tenth channel? ")
+                                    if userI9 == "n":
+                                        print(count)
+                                    elif userI9 == "y":
+                                        val10 = input("enter tenth channel's name: ")
+                                        count = count + 1
+
+
 
 class Bot(commands.Bot):
     
-    
-    
     def __init__(self):
         #try if statement here 
-        super().__init__(token=config.api_key, prefix='?', initial_channels=[val,val2])
+
+        if count == 0:
+            super().__init__(token=config.api_key, prefix='?', initial_channels=[val])
+        elif count == 1:
+            super().__init__(token=config.api_key, prefix='?', initial_channels=[val,val2])
+        elif count == 2:
+            super().__init__(token=config.api_key, prefix='?', initial_channels=[val,val2, val3])
+        elif count == 3:
+            super().__init__(token=config.api_key, prefix='?', initial_channels=[val,val2, val3, val4])
+        elif count == 4:
+            super().__init__(token=config.api_key, prefix='?', initial_channels=[val,val2, val3, val4, val5])
+        elif count == 5:
+            super().__init__(token=config.api_key, prefix='?', initial_channels=[val,val2, val3, val4, val5, val6])
+        elif count == 6:
+            super().__init__(token=config.api_key, prefix='?', initial_channels=[val,val2, val3, val4, val5, val6, val7])
+        elif count == 7: 
+            super().__init__(token=config.api_key, prefix='?', initial_channels=[val,val2, val3, val4, val5, val6, val7, val8])
+        elif count == 8:
+            super().__init__(token=config.api_key, prefix='?', initial_channels=[val,val2, val3, val4, val5, val6, val7, val8, val9])
+        elif count == 9:
+            super().__init__(token=config.api_key, prefix='?', initial_channels=[val,val2, val3, val4, val5, val6, val7, val8, val9, val10])
         
     async def event_message(self, messagae):
 
@@ -90,18 +179,20 @@ class Bot(commands.Bot):
             
     #black jack command?
     @commands.command()
-    async def BJ(self, ctx: commands.Context):
-        dCard = random.randint(17,21)
+    async def bj(self, ctx: commands.Context):
+        dCard = random.randint(1,11)
+        dCard2 = random.randint(1,11)
         pCard1 = random.randint(1,11)
         pCard2 = random.randint(1,11)
         pTotal = pCard1 + pCard2
+        dTotal = dCard + dCard2
         
-        if pTotal > 21:
-            await ctx.send(f'the dealer drew {dCard}, {ctx.author.name} pulled {pTotal} YOU WINNNNN')
-        elif dCard < pTotal:
-            await ctx.send(f'the dealer drew {dCard}, {ctx.author.name} pulled {pTotal} YOU WINNNNN')
+        # if pTotal > 21:
+        #     await ctx.send(f'the dealer drew {dTotal}, {ctx.author.name} pulled {pTotal} YOU WINNNNN')
+        if dTotal < pTotal:
+            await ctx.send(f'the dealer drew {dTotal}, {ctx.author.name} pulled {pTotal} YOU WINNNNN')
         else:
-            await ctx.send(f'the dealer drew {dCard}, {ctx.author.name} pulled {pTotal} YOU LOSE WOMP WOMP')
+            await ctx.send(f'the dealer drew {dTotal}, {ctx.author.name} pulled {pTotal} YOU LOSE WOMP WOMP')
 
             
 bot = Bot()

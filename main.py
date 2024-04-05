@@ -192,6 +192,7 @@ class Bot(commands.Bot):
         else:
             await ctx.send(f'the dealer drew {dTotal}, {ctx.author.name} pulled {pTotal} YOU LOSE WOMP WOMP')
 
-            
+    
+
 bot = Bot()
 bot.run()

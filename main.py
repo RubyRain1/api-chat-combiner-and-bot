@@ -131,6 +131,7 @@ class Bot(commands.Bot):
             return
         
         print(f'{message.author.display_name}: {message.content}')
+        print(" ")
 
         await self.handle_commands(message)
 

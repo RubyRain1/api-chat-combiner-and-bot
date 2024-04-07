@@ -129,9 +129,9 @@ class Bot(commands.Bot):
 
         if message.echo:
             return
-        print(("              Messages begin below                  "
-              "----------------------------------------------------"))
+        print("---------------------------------")
         print(f'{message.author.display_name}: {message.content}')
+        print("---------------------------------")
         print(" ")
 
         await self.handle_commands(message)
@@ -163,7 +163,7 @@ class Bot(commands.Bot):
             #this is going to be the random logic for the command.
         milk = round(random.uniform(1,100), 2) #this gets a random float number from 1-100 and stops it at 2 dec points.
         if milk <= 55:
-            mMilk = "you regular milk :3"
+            mMilk = "you get regular milk :3"
             await ctx.send(f'{ctx.author.name} {mMilk}')
         elif milk <= 85:
             mMilk = "you get the kinda mid strawberry milk if we are really being honest here."

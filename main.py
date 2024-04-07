@@ -45,49 +45,49 @@ elif userI == "y":
     count = count + 1
     userI2 = input("would you like to add a third channel? ")
     if userI2 == "n":
-        print(count)
+        print("combining chats, bot is now in use. Well wishes on your collab :)")
     elif userI2 == "y":
         val3 = input("enter third channel's name: ")
         count = count + 1
         userI3 = input("would you like to add a fourth channel? ")
         if userI3 == "n":
-            print(count)
+            print("combining chats, bot is now in use. Well wishes on your collab :)")
         elif userI3 == "y":
             val4 = input("enter fourth channel's name: ")
             count = count + 1
             userI4 = input("would you like to add a fifth channel? ")
             if userI4 == "n":
-                print(count)
+                print("combining chats, bot is now in use. Well wishes on your collab :)")
             elif userI4 == "y":
                 val5 = input("enter fifth channel's name: ")
                 count = count + 1
                 userI5 = input("would you like to add a sixth channel? ")
                 if userI5 == "n":
-                    print(count)
+                    print("combining chats, bot is now in use. Well wishes on your collab :)")
                 elif userI5 == "y":
                         val6 = input("enter sixth channel's name: ")
                         count = count + 1
                         userI6 = input("would you like to add a seventh channel? ")
                         if userI6 == "n": 
-                            print(count)
+                            print("combining chats, bot is now in use. Well wishes on your collab :)")
                         elif userI6 == "y":
                             val7 = input("enter seventh channel's name: ")
                             count = count + 1
                             userI7 = input("would you like to add a eighth channel? ")
                             if userI7 == "n":
-                                print(count)
+                                print("combining chats, bot is now in use. Well wishes on your collab :)")
                             elif userI7 == "y":
                                 val8 = input("enter eighth channel's name: ")
                                 count = count + 1
                                 userI8 = input("would you like to add a ninth channel? ")
                                 if userI8 == "n":
-                                    print(count)
+                                    print("combining chats, bot is now in use. Well wishes on your collab :)")
                                 elif userI8 == "y":
                                     val9 = input("enter ninth channel's name: ")
                                     count = count + 1
                                     userI9 = input("would you like to add a tenth channel? ")
                                     if userI9 == "n":
-                                        print(count)
+                                        print("combining chats, bot is now in use. Well wishes on your collab :)")
                                     elif userI9 == "y":
                                         val10 = input("enter tenth channel's name: ")
                                         count = count + 1
@@ -129,7 +129,8 @@ class Bot(commands.Bot):
 
         if message.echo:
             return
-        
+        print(("              Messages begin below                  "
+              "----------------------------------------------------"))
         print(f'{message.author.display_name}: {message.content}')
         print(" ")
 

@@ -162,10 +162,10 @@ class Bot(commands.Bot):
     async def milk(self, ctx: commands.Context):
             #this is going to be the random logic for the command.
         milk = round(random.uniform(1,100), 2) #this gets a random float number from 1-100 and stops it at 2 dec points.
-        if milk <= 33.33:
+        if milk <= 55:
             mMilk = "you regular milk :3"
             await ctx.send(f'{ctx.author.name} {mMilk}')
-        elif milk <= 66.66:
+        elif milk <= 85:
             mMilk = "you get the kinda mid strawberry milk if we are really being honest here."
             await ctx.send(f'{ctx.author.name} {mMilk}')
         elif milk <= 99.99:

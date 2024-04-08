@@ -1,6 +1,7 @@
 from twitchio.ext import commands 
 import config
 import random
+import time
 
 
 # this is the introduction of a terminal based ui incase I cannot implement a working GUI
@@ -101,6 +102,7 @@ elif start == "y":
 
 #possibly implement a rating system that will store all ratings in a DB for further improvements.
 
+
     class Bot(commands.Bot):
         
         def __init__(self):
@@ -144,7 +146,8 @@ elif start == "y":
             print(" ")
 
             await self.handle_commands(message)
-
+#here I need to implement a cooldown system.
+        
         @commands.command()
         async def hello(self, ctx: commands.Context):
             await ctx.send(f'Hello {ctx.author.name}')

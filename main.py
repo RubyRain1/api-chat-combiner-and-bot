@@ -131,7 +131,7 @@ elif start == "y":
             print(f'user id is | {self.user_id}')
 
         async def event_message(self, message):
-
+            
             if message.echo:
                 return
             print("-----------------------------------------------------------------"
@@ -201,7 +201,17 @@ elif start == "y":
             else:
                 await ctx.send(f'the dealer drew {dTotal}, {ctx.author.name} pulled {pTotal} YOU LOSE WOMP WOMP')
 
+        @commands.command()
+        async def love(self, ctx: commands.Context):
+            
+            love = random.randint(1,100)
+            await ctx.send(f'{ctx.author.name} is {love}% compatable with {val}')
         
-
+        #this command only to be used if the streamer wants to shout out the creator. 
+        @commands.command()
+        async def support(self, ctx: commands.Context):
+            await ctx.send("howdy gang my name is Ruby Rain, I am a small indie vtubing bunny boy! "
+                           "I am the creator of this bot, if you would like to support me you can check out"
+                           "this project on my kofi! - enter kofi link here -")
     bot = Bot()
     bot.run()

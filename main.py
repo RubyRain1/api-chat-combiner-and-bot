@@ -16,14 +16,16 @@ print(""""
    """"")  
 
 print("this app is used to convert up to 10 chats into one by inputting channel names. This is helpful for any twitch streamer"
-" looking to have a cleaner chat experience during collabs!")
+" looking to have a cleaner chat experience during collabs! If you would like to give feedback please type 'feedback'"
+" during the starting prompt.")
 print(" ") #this just adds a space
 
 # this is where some start logic will be.
 start = input("would you like to begin using the program? (Y/N) ")
 print(" ")
-
-if start == "n":
+if start == "feedback":
+    print("yippie")
+elif start == "n":
     print("thank you for considering the use of my chat combiner! Have a nice day/night!")
 elif start == "y":    
     count = 0 #increment up each time in order to trigger different itterations of super.__init__ 
@@ -97,7 +99,7 @@ elif start == "y":
                                             val10 = input("enter tenth channel's name: ")
                                             count = count + 1
 
-
+#possibly implement a rating system that will store all ratings in a DB for further improvements.
 
     class Bot(commands.Bot):
         

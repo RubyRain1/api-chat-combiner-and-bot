@@ -151,6 +151,8 @@ elif start == "y":
         @commands.command()
         async def hello(self, ctx: commands.Context):
             await ctx.send(f'Hello {ctx.author.name}')
+            
+           
 
         @commands.command()
         async def cookie(self, ctx: commands.Context):

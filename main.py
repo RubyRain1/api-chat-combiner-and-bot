@@ -44,7 +44,7 @@ elif start == "y":
     userI8 = ""
     userI9 = ""
 
-
+    #use a loop here
     if userI == "n": 
         print("bot functionality beginning")
         count = 0

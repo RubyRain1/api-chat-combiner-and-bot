@@ -1,4 +1,5 @@
-from twitchio.ext import commands 
+from twitchio.ext import commands
+from twitchio.ext import pubsub
 import config
 import random
 import time
@@ -145,7 +146,12 @@ elif start == "y":
 
             await self.handle_commands(message)
 #here I need to implement a cooldown system.
+        #channel points?
+       
         
+
+       
+          
         @commands.command()
         async def hello(self, ctx: commands.Context):
             await ctx.send(f'Hello {ctx.author.name}')

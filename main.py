@@ -23,7 +23,7 @@ print("this app is used to convert up to 10 chats into one by inputting channel 
 print(" ") #this just adds a space
 
 # this is where some start logic will be.
-start = input("would you like to begin using the program? (Y/N) ")
+start = input("would you like to begin using the program? (Y/N) ").lower()
 print(" ")
 if start == "feedback":
     print("yippie")

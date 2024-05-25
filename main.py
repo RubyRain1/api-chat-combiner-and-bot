@@ -35,7 +35,7 @@ elif start == "y":
     val = input("Enter your channel name: ") # this is the initial channel value as it is assumed you will always be combining your chat
 
     #these are used to get user input for up to 10 channels.
-    userI = input("would you like to add another channel? ")
+    userI = input("would you like to add another channel? ").lower()
     userI2 = ""
     userI3 = ""
     userI4 = ""
@@ -52,49 +52,49 @@ elif start == "y":
     elif userI == "y":
         val2 = input("Enter second channel's name: ")
         count = count + 1
-        userI2 = input("would you like to add a third channel? ")
+        userI2 = input("would you like to add a third channel? ").lower()
         if userI2 == "n":
             print("combining chats, bot is now in use. Well wishes on your collab :)")
         elif userI2 == "y":
             val3 = input("enter third channel's name: ")
             count = count + 1
-            userI3 = input("would you like to add a fourth channel? ")
+            userI3 = input("would you like to add a fourth channel? ").lower()
             if userI3 == "n":
                 print("combining chats, bot is now in use. Well wishes on your collab :)")
             elif userI3 == "y":
                 val4 = input("enter fourth channel's name: ")
                 count = count + 1
-                userI4 = input("would you like to add a fifth channel? ")
+                userI4 = input("would you like to add a fifth channel? ").lower()
                 if userI4 == "n":
                     print("combining chats, bot is now in use. Well wishes on your collab :)")
                 elif userI4 == "y":
                     val5 = input("enter fifth channel's name: ")
                     count = count + 1
-                    userI5 = input("would you like to add a sixth channel? ")
+                    userI5 = input("would you like to add a sixth channel? ").lower()
                     if userI5 == "n":
                         print("combining chats, bot is now in use. Well wishes on your collab :)")
                     elif userI5 == "y":
                             val6 = input("enter sixth channel's name: ")
                             count = count + 1
-                            userI6 = input("would you like to add a seventh channel? ")
+                            userI6 = input("would you like to add a seventh channel? ").lower()
                             if userI6 == "n": 
                                 print("combining chats, bot is now in use. Well wishes on your collab :)")
                             elif userI6 == "y":
                                 val7 = input("enter seventh channel's name: ")
                                 count = count + 1
-                                userI7 = input("would you like to add a eighth channel? ")
+                                userI7 = input("would you like to add a eighth channel? ").lower()
                                 if userI7 == "n":
                                     print("combining chats, bot is now in use. Well wishes on your collab :)")
                                 elif userI7 == "y":
                                     val8 = input("enter eighth channel's name: ")
                                     count = count + 1
-                                    userI8 = input("would you like to add a ninth channel? ")
+                                    userI8 = input("would you like to add a ninth channel? ").lower()
                                     if userI8 == "n":
                                         print("combining chats, bot is now in use. Well wishes on your collab :)")
                                     elif userI8 == "y":
                                         val9 = input("enter ninth channel's name: ")
                                         count = count + 1
-                                        userI9 = input("would you like to add a tenth channel? ")
+                                        userI9 = input("would you like to add a tenth channel? ").lower()
                                         if userI9 == "n":
                                             print("combining chats, bot is now in use. Well wishes on your collab :)")
                                         elif userI9 == "y":

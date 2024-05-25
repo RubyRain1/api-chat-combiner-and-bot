@@ -3,7 +3,8 @@ from twitchio.ext import pubsub
 import config
 import random
 import time
-
+from colorama import init
+from colorama import Fore, Back, Style
 
 # this is the introduction of a terminal based ui incase I cannot implement a working GUI
 print(""""
@@ -34,6 +35,10 @@ elif start == "y":
 
     val = input("Enter your channel name: ") # this is the initial channel value as it is assumed you will always be combining your chat
 
+#this will be for terminla color
+    colorI1 = int(input("what color would you like it to be? \n (1. green, 2. blue, 3. red): "))
+    colorI2 = ""
+
     #these are used to get user input for up to 10 channels.
     userI = input("would you like to add another channel? ").lower()
     userI2 = ""
@@ -45,6 +50,9 @@ elif start == "y":
     userI8 = ""
     userI9 = ""
 
+    #user id grabbing 
+    userID = "Nightbot"
+
     #use a loop here
     if userI == "n": 
         print("bot functionality beginning")
@@ -53,6 +61,7 @@ elif start == "y":
         val2 = input("Enter second channel's name: ")
         count = count + 1
         userI2 = input("would you like to add a third channel? ").lower()
+        colorI2 =input("what color would you like it to be? \n (1. green, 2. blue, 3. red): ")
         if userI2 == "n":
             print("combining chats, bot is now in use. Well wishes on your collab :)")
         elif userI2 == "y":
@@ -136,13 +145,48 @@ elif start == "y":
             print(f'user id is | {self.user_id}')
 
         async def event_message(self, message):
-            
+
             if message.echo:
                 return
-            print("-----------------------------------------------------------------")
-            print(f'{message.author.display_name}: {message.content}')
-            print("-----------------------------------------------------------------")
-            print(" ")
+            
+            for i in range(0,1):
+            #this is for the first input color choices
+                if colorI1 ==  1:
+                    print(Fore.GREEN,"-----------------------------------------------------------------")
+                    print(Fore.GREEN,f'{message.author.display_name}: {message.content}')
+                    print(Fore.GREEN,"-----------------------------------------------------------------")
+                    print(" ")
+                    i = 0
+                    print(Style.RESET_ALL)
+                    
+                elif colorI1 == 2:
+                    print(Fore.BLUE,"-----------------------------------------------------------------")
+                    print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
+                    print(Fore.BLUE,"-----------------------------------------------------------------")
+                    print(" ")
+                    i = 0
+                print(Style.RESET_ALL)
+                   
+
+            for i in range(0,1):
+            #this is second channel color test
+                if colorI2 ==  1 :
+                    print("-----------------------------------------------------------------")
+                    print(f"\033[1;32m {message.author.display_name}: {message.content} \n")
+                    print("-----------------------------------------------------------------")
+                    print(" ")
+                    i = 0
+                    
+                elif colorI2 == 2 :
+                    print(Fore.BLUE,"-----------------------------------------------------------------")
+                    print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
+                    print(Fore.BLUE,"-----------------------------------------------------------------")
+                    print(" ")
+                    i = 0
+                print(Style.RESET_ALL)
+                    
+            
+                
 
             await self.handle_commands(message)
 #here I need to implement a cooldown system.
@@ -226,3 +270,4 @@ elif start == "y":
                            "this project on my kofi! - enter kofi link here -")
     bot = Bot()
     bot.run()
+    init()

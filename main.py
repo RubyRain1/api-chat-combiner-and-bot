@@ -37,7 +37,7 @@ elif start == "y":
 
 #this will be for terminla color
     colorI1 = int(input("what color would you like it to be? \n (1. green, 2. blue, 3. red): "))
-    colorI2 = ""
+    # colorI2 = ""
 
     #these are used to get user input for up to 10 channels.
     userI = input("would you like to add another channel? ").lower()
@@ -52,16 +52,17 @@ elif start == "y":
 
     #user id grabbing 
     userID = "Nightbot"
-
+    test = []
     #use a loop here
     if userI == "n": 
         print("bot functionality beginning")
         count = 0
     elif userI == "y":
         val2 = input("Enter second channel's name: ")
+        test.append[val2]
         count = count + 1
+        # colorI2 =input("what color would you like it to be? \n (1. green, 2. blue, 3. red): ")
         userI2 = input("would you like to add a third channel? ").lower()
-        colorI2 =input("what color would you like it to be? \n (1. green, 2. blue, 3. red): ")
         if userI2 == "n":
             print("combining chats, bot is now in use. Well wishes on your collab :)")
         elif userI2 == "y":
@@ -148,43 +149,50 @@ elif start == "y":
 
             if message.echo:
                 return
-            
+            print(test)
             
             #this is for the first input color choices
             if colorI1 ==  1:
                 print(Fore.GREEN,"-----------------------------------------------------------------")
+                print(Fore.YELLOW, f'{message.channel._name}:')
                 print(Fore.GREEN,f'{message.author.display_name}: {message.content}')
                 print(Fore.GREEN,"-----------------------------------------------------------------")
                 print(" ")
-                
-            print(Style.RESET_ALL)
+                print(Style.RESET_ALL)
                     
-            if colorI1 == 2:
+            elif colorI1 == 2:
                 print(Fore.BLUE,"-----------------------------------------------------------------")
+                print(Fore.RED, f'{message.channel._name}:')
                 print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
                 print(Fore.BLUE,"-----------------------------------------------------------------")
                 print(" ")
-                
-            print(Style.RESET_ALL)
-                   
+                print(Style.RESET_ALL)
+            
+            elif colorI1 == 3:
+                print(Fore.RED,"-----------------------------------------------------------------")
+                print(Fore.BLUE, f'{message.channel._name}:')
+                print(Fore.RED,f'{message.author.display_name}: {message.content}')
+                print(Fore.RED,"-----------------------------------------------------------------")
+                print(" ")
+                print(Style.RESET_ALL)
 
            
-            #this is second channel color test
-            if colorI2 ==  1 :
-                print("-----------------------------------------------------------------")
-                print(Fore.GREEN,f"{message.author.display_name}: {message.content}")
-                print("-----------------------------------------------------------------")
-                print(" ")
+            # #this is second channel color test
+            # if colorI2 ==  1 :
+            #     print("-----------------------------------------------------------------")
+            #     print(Fore.GREEN,f"{message.author.display_name}: {message.content}")
+            #     print("-----------------------------------------------------------------")
+            #     print(" ")
                 
-            print(Style.RESET_ALL)
+            # print(Style.RESET_ALL)
 
-            if colorI2 == 2 :
-                print(Fore.BLUE,"-----------------------------------------------------------------")
-                print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
-                print(Fore.BLUE,"-----------------------------------------------------------------")
-                print(" ")
+            # if colorI2 == 2 :
+            #     print(Fore.BLUE,"-----------------------------------------------------------------")
+            #     print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
+            #     print(Fore.BLUE,"-----------------------------------------------------------------")
+            #     print(" ")
             
-            print(Style.RESET_ALL)
+            # print(Style.RESET_ALL)
                     
             
                 

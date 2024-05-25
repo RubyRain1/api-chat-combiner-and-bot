@@ -149,41 +149,42 @@ elif start == "y":
             if message.echo:
                 return
             
-            for i in range(0,1):
+            
             #this is for the first input color choices
-                if colorI1 ==  1:
-                    print(Fore.GREEN,"-----------------------------------------------------------------")
-                    print(Fore.GREEN,f'{message.author.display_name}: {message.content}')
-                    print(Fore.GREEN,"-----------------------------------------------------------------")
-                    print(" ")
-                    i = 0
-                    print(Style.RESET_ALL)
+            if colorI1 ==  1:
+                print(Fore.GREEN,"-----------------------------------------------------------------")
+                print(Fore.GREEN,f'{message.author.display_name}: {message.content}')
+                print(Fore.GREEN,"-----------------------------------------------------------------")
+                print(" ")
+                
+            print(Style.RESET_ALL)
                     
-                elif colorI1 == 2:
-                    print(Fore.BLUE,"-----------------------------------------------------------------")
-                    print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
-                    print(Fore.BLUE,"-----------------------------------------------------------------")
-                    print(" ")
-                    i = 0
-                print(Style.RESET_ALL)
+            if colorI1 == 2:
+                print(Fore.BLUE,"-----------------------------------------------------------------")
+                print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
+                print(Fore.BLUE,"-----------------------------------------------------------------")
+                print(" ")
+                
+            print(Style.RESET_ALL)
                    
 
-            for i in range(0,1):
+           
             #this is second channel color test
-                if colorI2 ==  1 :
-                    print("-----------------------------------------------------------------")
-                    print(f"\033[1;32m {message.author.display_name}: {message.content} \n")
-                    print("-----------------------------------------------------------------")
-                    print(" ")
-                    i = 0
-                    
-                elif colorI2 == 2 :
-                    print(Fore.BLUE,"-----------------------------------------------------------------")
-                    print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
-                    print(Fore.BLUE,"-----------------------------------------------------------------")
-                    print(" ")
-                    i = 0
-                print(Style.RESET_ALL)
+            if colorI2 ==  1 :
+                print("-----------------------------------------------------------------")
+                print(Fore.GREEN,f"{message.author.display_name}: {message.content}")
+                print("-----------------------------------------------------------------")
+                print(" ")
+                
+            print(Style.RESET_ALL)
+
+            if colorI2 == 2 :
+                print(Fore.BLUE,"-----------------------------------------------------------------")
+                print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
+                print(Fore.BLUE,"-----------------------------------------------------------------")
+                print(" ")
+            
+            print(Style.RESET_ALL)
                     
             
                 

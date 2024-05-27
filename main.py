@@ -7,7 +7,7 @@ from colorama import init
 from colorama import Fore, Back, Style
 
 # this is the introduction of a terminal based ui incase I cannot implement a working GUI
-print(""""
+print('''
  _________      _         _        _____ _           _      _____                _     _                 
  |__   __|     (_) |     | |      / ____| |         | |    / ____|              | |   (_)                
     | |_      ___| |_ ___| |__   | |    | |__   __ _| |_  | |     ___  _ __ ___ | |__  _ _ __   ___ _ __ 
@@ -16,7 +16,7 @@ print(""""
     |_| \_/\_/ |_|\__\___|_| |_|  \_____|_| |_|\__,_|\__|  \_____\___/|_| |_| |_|_.__/|_|_| |_|\___|_|   
 
                                                                                                            
-   """"")  
+   ''')  
 
 print("this app is used to convert up to 10 chats into one by inputting channel names. This is helpful for any twitch streamer"
 " looking to have a cleaner chat experience during collabs! If you would like to give feedback please type 'feedback'"
@@ -68,7 +68,7 @@ elif start == "y":
         val2 = input("Enter second channel's name: ")
         test.append(val2)
         count = count + 1
-        colorI2 = int(input("what color would you like it to be? \n (1. green, 2. blue, 3. red): "))
+        colorI2 = colorI1
         userI2 = input("would you like to add a third channel? ").lower()
         if userI2 == "n":
             print("combining chats, bot is now in use. Well wishes on your collab :)")
@@ -179,7 +179,7 @@ elif start == "y":
                     print(" ")
                     print(Style.RESET_ALL)
 
-                if colorI3 ==  1 and message.channel._name == test[2]:
+                if colorI3 ==  1 and message.channel._name == test[2] and message.author._name != "nightbot":
                     print(Fore.GREEN,"-----------------------------------------------------------------")
                     print(Fore.WHITE, f'{message.channel._name}:')
                     print(Fore.GREEN,f'{message.author.display_name}: {message.content}')
@@ -187,7 +187,7 @@ elif start == "y":
                     print(" ")
                     print(Style.RESET_ALL)
                 
-                if colorI4 ==  1 and message.channel._name == test[3]:
+                if colorI4 ==  1 and message.channel._name == test[3] and message.author._name != "nightbot":
                     print(Fore.GREEN,"-----------------------------------------------------------------")
                     print(Fore.RED, f'{message.channel._name}:')
                     print(Fore.GREEN,f'{message.author.display_name}: {message.content}')
@@ -195,7 +195,7 @@ elif start == "y":
                     print(" ")
                     print(Style.RESET_ALL)
 
-                if colorI5 ==  1 and message.channel._name == test[4]:
+                if colorI5 ==  1 and message.channel._name == test[4] and message.author._name != "nightbot":
                     print(Fore.GREEN,"-----------------------------------------------------------------")
                     print(Fore.BLUE, f'{message.channel._name}:')
                     print(Fore.GREEN,f'{message.author.display_name}: {message.content}')
@@ -203,7 +203,7 @@ elif start == "y":
                     print(" ")
                     print(Style.RESET_ALL)
                 
-                if colorI6 ==  1 and message.channel._name == test[5]:
+                if colorI6 ==  1 and message.channel._name == test[5] and message.author._name != "nightbot":
                     print(Fore.GREEN,"-----------------------------------------------------------------")
                     print(Fore.CYAN, f'{message.channel._name}:')
                     print(Fore.GREEN,f'{message.author.display_name}: {message.content}')
@@ -211,7 +211,7 @@ elif start == "y":
                     print(" ")
                     print(Style.RESET_ALL)
 
-                if colorI7 ==  1 and message.channel._name == test[6]:
+                if colorI7 ==  1 and message.channel._name == test[6] and message.author._name != "nightbot":
                     print(Fore.GREEN,"-----------------------------------------------------------------")
                     print(Fore.LIGHTBLUE_EX, f'{message.channel._name}:')
                     print(Fore.GREEN,f'{message.author.display_name}: {message.content}')
@@ -219,7 +219,7 @@ elif start == "y":
                     print(" ")
                     print(Style.RESET_ALL)
                 
-                if colorI8 ==  1 and message.channel._name == test[7]:
+                if colorI8 ==  1 and message.channel._name == test[7] and message.author._name != "nightbot":
                     print(Fore.GREEN,"-----------------------------------------------------------------")
                     print(Fore.LIGHTYELLOW_EX, f'{message.channel._name}:')
                     print(Fore.GREEN,f'{message.author.display_name}: {message.content}')
@@ -227,7 +227,7 @@ elif start == "y":
                     print(" ")
                     print(Style.RESET_ALL)
                 
-                if colorI9 ==  1 and message.channel._name == test[8]:
+                if colorI9 ==  1 and message.channel._name == test[8] and message.author._name != "nightbot":
                     print(Fore.GREEN,"-----------------------------------------------------------------")
                     print(Fore.LIGHTGREEN_EX, f'{message.channel._name}:')
                     print(Fore.GREEN,f'{message.author.display_name}: {message.content}')
@@ -235,7 +235,7 @@ elif start == "y":
                     print(" ")
                     print(Style.RESET_ALL)
                 
-                if colorI10 ==  1 and message.channel._name == test[9]:
+                if colorI10 ==  1 and message.channel._name == test[9] and message.author._name != "nightbot":
                     print(Fore.GREEN,"-----------------------------------------------------------------")
                     print(Fore.LIGHTRED_EX, f'{message.channel._name}:')
                     print(Fore.GREEN,f'{message.author.display_name}: {message.content}')
@@ -244,7 +244,7 @@ elif start == "y":
                     print(Style.RESET_ALL)
 
                 #this is for the blue chat option
-                elif colorI1 == 2:
+                if colorI1 == 2 and message.channel._name == test[0] and message.author._name != "nightbot":
                     print(Fore.BLUE,"-----------------------------------------------------------------")
                     print(Fore.RED, f'{message.channel._name}:')
                     print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
@@ -252,7 +252,154 @@ elif start == "y":
                     print(" ")
                     print(Style.RESET_ALL)
                 
-                elif colorI1 == 3:
+                if colorI2 == 2 and message.channel._name == test[1] and message.author._name != "nightbot":
+                    print(Fore.BLUE,"-----------------------------------------------------------------")
+                    print(Fore.GREEN, f'{message.channel._name}:')
+                    print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
+                    print(Fore.BLUE,"-----------------------------------------------------------------")
+                    print(" ")
+                    print(Style.RESET_ALL)
+                
+                if colorI3 == 2 and message.channel._name == test[2] and message.author._name != "nightbot":
+                    print(Fore.BLUE,"-----------------------------------------------------------------")
+                    print(Fore.YELLOW, f'{message.channel._name}:')
+                    print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
+                    print(Fore.BLUE,"-----------------------------------------------------------------")
+                    print(" ")
+                    print(Style.RESET_ALL)
+
+                if colorI4 == 2 and message.channel._name == test[3] and message.author._name != "nightbot":
+                    print(Fore.BLUE,"-----------------------------------------------------------------")
+                    print(Fore.CYAN, f'{message.channel._name}:')
+                    print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
+                    print(Fore.BLUE,"-----------------------------------------------------------------")
+                    print(" ")
+                    print(Style.RESET_ALL)
+
+                if colorI5 == 2 and message.channel._name == test[4] and message.author._name != "nightbot":
+                    print(Fore.BLUE,"-----------------------------------------------------------------")
+                    print(Fore.MAGENTA, f'{message.channel._name}:')
+                    print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
+                    print(Fore.BLUE,"-----------------------------------------------------------------")
+                    print(" ")
+                    print(Style.RESET_ALL)
+                    
+                if colorI6 == 2 and message.channel._name == test[5] and message.author._name != "nightbot":
+                    print(Fore.BLUE,"-----------------------------------------------------------------")
+                    print(Fore.WHITE, f'{message.channel._name}:')
+                    print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
+                    print(Fore.BLUE,"-----------------------------------------------------------------")
+                    print(" ")
+                    print(Style.RESET_ALL)
+
+                if colorI7 == 2 and message.channel._name == test[6] and message.author._name != "nightbot":
+                    print(Fore.BLUE,"-----------------------------------------------------------------")
+                    print(Fore.LIGHTRED_EX, f'{message.channel._name}:')
+                    print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
+                    print(Fore.BLUE,"-----------------------------------------------------------------")
+                    print(" ")
+                    print(Style.RESET_ALL)
+
+                if colorI8 == 2 and message.channel._name == test[7] and message.author._name != "nightbot":
+                    print(Fore.BLUE,"-----------------------------------------------------------------")
+                    print(Fore.LIGHTCYAN_EX, f'{message.channel._name}:')
+                    print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
+                    print(Fore.BLUE,"-----------------------------------------------------------------")
+                    print(" ")
+                    print(Style.RESET_ALL)
+
+                if colorI9 == 2 and message.channel._name == test[8] and message.author._name != "nightbot":
+                    print(Fore.BLUE,"-----------------------------------------------------------------")
+                    print(Fore.LIGHTMAGENTA_EX, f'{message.channel._name}:')
+                    print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
+                    print(Fore.BLUE,"-----------------------------------------------------------------")
+                    print(" ")
+                    print(Style.RESET_ALL)
+
+                if colorI10 == 2 and message.channel._name == test[9] and message.author._name != "nightbot":
+                    print(Fore.BLUE,"-----------------------------------------------------------------")
+                    print(Fore.LIGHTGREEN_EX, f'{message.channel._name}:')
+                    print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
+                    print(Fore.BLUE,"-----------------------------------------------------------------")
+                    print(" ")
+                    print(Style.RESET_ALL)
+
+
+                #this is for the red chat option
+
+                if colorI1 == 3 and message.channel._name == test[0] and message.author._name != "nightbot":
+                    print(Fore.RED,"-----------------------------------------------------------------")
+                    print(Fore.BLUE, f'{message.channel._name}:')
+                    print(Fore.RED,f'{message.author.display_name}: {message.content}')
+                    print(Fore.RED,"-----------------------------------------------------------------")
+                    print(" ")
+                    print(Style.RESET_ALL)
+                
+                if colorI2 == 3 and message.channel._name == test[1] and message.author._name != "nightbot":
+                    print(Fore.RED,"-----------------------------------------------------------------")
+                    print(Fore.YELLOW, f'{message.channel._name}:')
+                    print(Fore.RED,f'{message.author.display_name}: {message.content}')
+                    print(Fore.RED,"-----------------------------------------------------------------")
+                    print(" ")
+                    print(Style.RESET_ALL)
+                
+                if colorI3 == 3 and message.channel._name == test[2] and message.author._name != "nightbot":
+                    print(Fore.RED,"-----------------------------------------------------------------")
+                    print(Fore.BLUE, f'{message.channel._name}:')
+                    print(Fore.RED,f'{message.author.display_name}: {message.content}')
+                    print(Fore.RED,"-----------------------------------------------------------------")
+                    print(" ")
+                    print(Style.RESET_ALL)
+                
+                if colorI4 == 3 and message.channel._name == test[3] and message.author._name != "nightbot":
+                    print(Fore.RED,"-----------------------------------------------------------------")
+                    print(Fore.BLUE, f'{message.channel._name}:')
+                    print(Fore.RED,f'{message.author.display_name}: {message.content}')
+                    print(Fore.RED,"-----------------------------------------------------------------")
+                    print(" ")
+                    print(Style.RESET_ALL)
+
+                if colorI5 == 3 and message.channel._name == test[4] and message.author._name != "nightbot":
+                    print(Fore.RED,"-----------------------------------------------------------------")
+                    print(Fore.BLUE, f'{message.channel._name}:')
+                    print(Fore.RED,f'{message.author.display_name}: {message.content}')
+                    print(Fore.RED,"-----------------------------------------------------------------")
+                    print(" ")
+                    print(Style.RESET_ALL)
+                
+                if colorI6 == 3 and message.channel._name == test[5] and message.author._name != "nightbot":
+                    print(Fore.RED,"-----------------------------------------------------------------")
+                    print(Fore.BLUE, f'{message.channel._name}:')
+                    print(Fore.RED,f'{message.author.display_name}: {message.content}')
+                    print(Fore.RED,"-----------------------------------------------------------------")
+                    print(" ")
+                    print(Style.RESET_ALL)
+
+                if colorI7 == 3 and message.channel._name == test[6] and message.author._name != "nightbot":
+                    print(Fore.RED,"-----------------------------------------------------------------")
+                    print(Fore.BLUE, f'{message.channel._name}:')
+                    print(Fore.RED,f'{message.author.display_name}: {message.content}')
+                    print(Fore.RED,"-----------------------------------------------------------------")
+                    print(" ")
+                    print(Style.RESET_ALL)
+                
+                if colorI8 == 3 and message.channel._name == test[7] and message.author._name != "nightbot":
+                    print(Fore.RED,"-----------------------------------------------------------------")
+                    print(Fore.BLUE, f'{message.channel._name}:')
+                    print(Fore.RED,f'{message.author.display_name}: {message.content}')
+                    print(Fore.RED,"-----------------------------------------------------------------")
+                    print(" ")
+                    print(Style.RESET_ALL)
+                
+                if colorI9 == 3 and message.channel._name == test[8] and message.author._name != "nightbot":
+                    print(Fore.RED,"-----------------------------------------------------------------")
+                    print(Fore.BLUE, f'{message.channel._name}:')
+                    print(Fore.RED,f'{message.author.display_name}: {message.content}')
+                    print(Fore.RED,"-----------------------------------------------------------------")
+                    print(" ")
+                    print(Style.RESET_ALL)
+
+                if colorI10 == 3 and message.channel._name == test[9] and message.author._name != "nightbot":
                     print(Fore.RED,"-----------------------------------------------------------------")
                     print(Fore.BLUE, f'{message.channel._name}:')
                     print(Fore.RED,f'{message.author.display_name}: {message.content}')
@@ -261,22 +408,7 @@ elif start == "y":
                     print(Style.RESET_ALL)
 
                 
-                #this is second channel color test
-                if colorI2 ==  1 :
-                    print("-----------------------------------------------------------------")
-                    print(Fore.GREEN,f"{message.author.display_name}: {message.content}")
-                    print("-----------------------------------------------------------------")
-                    print(" ")
-                    
-                print(Style.RESET_ALL)
-
-                if colorI2 == 2 :
-                    print(Fore.BLUE,"-----------------------------------------------------------------")
-                    print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
-                    print(Fore.BLUE,"-----------------------------------------------------------------")
-                    print(" ")
                 
-                print(Style.RESET_ALL)
                         
                 
                 
@@ -358,7 +490,7 @@ elif start == "y":
         #this command only to be used if the streamer wants to shout out the creator. 
         @commands.command()
         async def support(self, ctx: commands.Context):
-            await ctx.send("howdy gang my name is Ruby Rain, I am a small indie vtubing bunny boy! "
+            await ctx.send("howdy gang my name is Grave Nelith, I am a small indie vtubing bunny boy! "
                            "I am the creator of this bot, if you would like to support me you can check out"
                            "this project on my kofi! - enter kofi link here -")
     bot = Bot()

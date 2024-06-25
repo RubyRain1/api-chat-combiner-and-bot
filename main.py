@@ -74,49 +74,65 @@ elif start == "y":
             print("combining chats, bot is now in use. Well wishes on your collab :)")
         elif userI2 == "y":
             val3 = input("enter third channel's name: ")
+            test.append(val3)
             count = count + 1
+            colorI3 = colorI1
             userI3 = input("would you like to add a fourth channel? ").lower()
             if userI3 == "n":
                 print("combining chats, bot is now in use. Well wishes on your collab :)")
             elif userI3 == "y":
                 val4 = input("enter fourth channel's name: ")
+                test.append(val4)
                 count = count + 1
+                colorI4 = colorI1
                 userI4 = input("would you like to add a fifth channel? ").lower()
                 if userI4 == "n":
                     print("combining chats, bot is now in use. Well wishes on your collab :)")
                 elif userI4 == "y":
                     val5 = input("enter fifth channel's name: ")
+                    test.append(val5)
                     count = count + 1
+                    colorI5 = colorI1
                     userI5 = input("would you like to add a sixth channel? ").lower()
                     if userI5 == "n":
                         print("combining chats, bot is now in use. Well wishes on your collab :)")
                     elif userI5 == "y":
                             val6 = input("enter sixth channel's name: ")
+                            test.append(val6)
                             count = count + 1
+                            colorI6 = colorI1
                             userI6 = input("would you like to add a seventh channel? ").lower()
                             if userI6 == "n": 
                                 print("combining chats, bot is now in use. Well wishes on your collab :)")
                             elif userI6 == "y":
                                 val7 = input("enter seventh channel's name: ")
+                                test.append(val7)
                                 count = count + 1
+                                colorI7 = colorI1
                                 userI7 = input("would you like to add a eighth channel? ").lower()
                                 if userI7 == "n":
                                     print("combining chats, bot is now in use. Well wishes on your collab :)")
                                 elif userI7 == "y":
                                     val8 = input("enter eighth channel's name: ")
+                                    test.append(val8)
                                     count = count + 1
+                                    colorI8 = colorI1
                                     userI8 = input("would you like to add a ninth channel? ").lower()
                                     if userI8 == "n":
                                         print("combining chats, bot is now in use. Well wishes on your collab :)")
                                     elif userI8 == "y":
                                         val9 = input("enter ninth channel's name: ")
+                                        test.append(val9)
                                         count = count + 1
+                                        colorI9 = colorI1
                                         userI9 = input("would you like to add a tenth channel? ").lower()
                                         if userI9 == "n":
                                             print("combining chats, bot is now in use. Well wishes on your collab :)")
                                         elif userI9 == "y":
                                             val10 = input("enter tenth channel's name: ")
+                                            test.append(val10)
                                             count = count + 1
+                                            colorI10 = colorI1
 
 #possibly implement a rating system that will store all ratings in a DB for further improvements.
 
@@ -158,7 +174,7 @@ elif start == "y":
                 return
            
             #this if statement catches bot messages and ignores them
-            print(test)
+            # print(test)
             #this is for the first input color choices will run for all messages other then bots          
             if colorI1 == 1 and message.channel._name == test[0] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.GREEN,"-----------------------------------------------------------------")
@@ -168,7 +184,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
             
-            if colorI2 ==  1 and message.channel._name == test[1] and message.author._name.lower() != "nightbot" :
+            if colorI2 ==  1 and message.channel._name == test[1] and message.author._name.lower() != "nightbot" and message.author._name != "streamelements" :
                 print(Fore.GREEN,"-----------------------------------------------------------------")
                 print(Fore.YELLOW, f'{message.channel._name}:')
                 print(Fore.GREEN,f'{message.author.display_name}: {message.content}')
@@ -176,7 +192,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
 
-            if colorI3 ==  1 and message.channel._name == test[2] and message.author._name != "nightbot":
+            if colorI3==  1 and message.channel._name == test[2] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.GREEN,"-----------------------------------------------------------------")
                 print(Fore.WHITE, f'{message.channel._name}:')
                 print(Fore.GREEN,f'{message.author.display_name}: {message.content}')
@@ -184,7 +200,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
             
-            if colorI4 ==  1 and message.channel._name == test[3] and message.author._name != "nightbot":
+            if colorI4 ==  1 and message.channel._name == test[3] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.GREEN,"-----------------------------------------------------------------")
                 print(Fore.RED, f'{message.channel._name}:')
                 print(Fore.GREEN,f'{message.author.display_name}: {message.content}')
@@ -192,7 +208,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
 
-            if colorI5 ==  1 and message.channel._name == test[4] and message.author._name != "nightbot":
+            if colorI5 ==  1 and message.channel._name == test[4] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.GREEN,"-----------------------------------------------------------------")
                 print(Fore.BLUE, f'{message.channel._name}:')
                 print(Fore.GREEN,f'{message.author.display_name}: {message.content}')
@@ -200,7 +216,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
             
-            if colorI6 ==  1 and message.channel._name == test[5] and message.author._name != "nightbot":
+            if colorI6 ==  1 and message.channel._name == test[5] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.GREEN,"-----------------------------------------------------------------")
                 print(Fore.CYAN, f'{message.channel._name}:')
                 print(Fore.GREEN,f'{message.author.display_name}: {message.content}')
@@ -208,7 +224,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
 
-            if colorI7 ==  1 and message.channel._name == test[6] and message.author._name != "nightbot":
+            if colorI7 ==  1 and message.channel._name == test[6] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.GREEN,"-----------------------------------------------------------------")
                 print(Fore.LIGHTBLUE_EX, f'{message.channel._name}:')
                 print(Fore.GREEN,f'{message.author.display_name}: {message.content}')
@@ -216,7 +232,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
             
-            if colorI8 ==  1 and message.channel._name == test[7] and message.author._name != "nightbot":
+            if colorI8 ==  1 and message.channel._name == test[7] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.GREEN,"-----------------------------------------------------------------")
                 print(Fore.LIGHTYELLOW_EX, f'{message.channel._name}:')
                 print(Fore.GREEN,f'{message.author.display_name}: {message.content}')
@@ -224,7 +240,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
             
-            if colorI9 ==  1 and message.channel._name == test[8] and message.author._name != "nightbot":
+            if colorI9 ==  1 and message.channel._name == test[8] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.GREEN,"-----------------------------------------------------------------")
                 print(Fore.LIGHTGREEN_EX, f'{message.channel._name}:')
                 print(Fore.GREEN,f'{message.author.display_name}: {message.content}')
@@ -232,7 +248,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
             
-            if colorI10 ==  1 and message.channel._name == test[9] and message.author._name != "nightbot":
+            if colorI10 ==  1 and message.channel._name == test[9] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.GREEN,"-----------------------------------------------------------------")
                 print(Fore.LIGHTRED_EX, f'{message.channel._name}:')
                 print(Fore.GREEN,f'{message.author.display_name}: {message.content}')
@@ -241,7 +257,7 @@ elif start == "y":
                 print(Style.RESET_ALL)
 
             #this is for the blue chat option
-            if colorI1 == 2 and message.channel._name == test[0] and message.author._name != "nightbot":
+            if colorI1 == 2 and message.channel._name == test[0] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.BLUE,"-----------------------------------------------------------------")
                 print(Fore.RED, f'{message.channel._name}:')
                 print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
@@ -249,7 +265,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
             
-            if colorI2 == 2 and message.channel._name == test[1] and message.author._name != "nightbot":
+            if colorI2 == 2 and message.channel._name == test[1] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.BLUE,"-----------------------------------------------------------------")
                 print(Fore.GREEN, f'{message.channel._name}:')
                 print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
@@ -257,7 +273,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
             
-            if colorI3 == 2 and message.channel._name == test[2] and message.author._name != "nightbot":
+            if colorI3 == 2 and message.channel._name == test[2] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.BLUE,"-----------------------------------------------------------------")
                 print(Fore.YELLOW, f'{message.channel._name}:')
                 print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
@@ -265,7 +281,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
 
-            if colorI4 == 2 and message.channel._name == test[3] and message.author._name != "nightbot":
+            if colorI4 == 2 and message.channel._name == test[3] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.BLUE,"-----------------------------------------------------------------")
                 print(Fore.CYAN, f'{message.channel._name}:')
                 print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
@@ -273,7 +289,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
 
-            if colorI5 == 2 and message.channel._name == test[4] and message.author._name != "nightbot":
+            if colorI5 == 2 and message.channel._name == test[4] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.BLUE,"-----------------------------------------------------------------")
                 print(Fore.MAGENTA, f'{message.channel._name}:')
                 print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
@@ -281,7 +297,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
                 
-            if colorI6 == 2 and message.channel._name == test[5] and message.author._name != "nightbot":
+            if colorI6 == 2 and message.channel._name == test[5] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.BLUE,"-----------------------------------------------------------------")
                 print(Fore.WHITE, f'{message.channel._name}:')
                 print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
@@ -289,7 +305,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
 
-            if colorI7 == 2 and message.channel._name == test[6] and message.author._name != "nightbot":
+            if colorI7 == 2 and message.channel._name == test[6] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.BLUE,"-----------------------------------------------------------------")
                 print(Fore.LIGHTRED_EX, f'{message.channel._name}:')
                 print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
@@ -297,7 +313,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
 
-            if colorI8 == 2 and message.channel._name == test[7] and message.author._name != "nightbot":
+            if colorI8 == 2 and message.channel._name == test[7] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.BLUE,"-----------------------------------------------------------------")
                 print(Fore.LIGHTCYAN_EX, f'{message.channel._name}:')
                 print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
@@ -305,7 +321,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
 
-            if colorI9 == 2 and message.channel._name == test[8] and message.author._name != "nightbot":
+            if colorI9 == 2 and message.channel._name == test[8] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.BLUE,"-----------------------------------------------------------------")
                 print(Fore.LIGHTMAGENTA_EX, f'{message.channel._name}:')
                 print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
@@ -313,7 +329,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
 
-            if colorI10 == 2 and message.channel._name == test[9] and message.author._name != "nightbot":
+            if colorI10 == 2 and message.channel._name == test[9] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.BLUE,"-----------------------------------------------------------------")
                 print(Fore.LIGHTGREEN_EX, f'{message.channel._name}:')
                 print(Fore.BLUE,f'{message.author.display_name}: {message.content}')
@@ -324,7 +340,7 @@ elif start == "y":
 
             #this is for the red chat option
 
-            if colorI1 == 3 and message.channel._name == test[0] and message.author._name != "nightbot":
+            if colorI1 == 3 and message.channel._name == test[0] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.RED,"-----------------------------------------------------------------")
                 print(Fore.BLUE, f'{message.channel._name}:')
                 print(Fore.RED,f'{message.author.display_name}: {message.content}')
@@ -332,7 +348,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
             
-            if colorI2 == 3 and message.channel._name == test[1] and message.author._name != "nightbot":
+            if colorI2 == 3 and message.channel._name == test[1] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.RED,"-----------------------------------------------------------------")
                 print(Fore.YELLOW, f'{message.channel._name}:')
                 print(Fore.RED,f'{message.author.display_name}: {message.content}')
@@ -340,7 +356,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
             
-            if colorI3 == 3 and message.channel._name == test[2] and message.author._name != "nightbot":
+            if colorI3 == 3 and message.channel._name == test[2] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.RED,"-----------------------------------------------------------------")
                 print(Fore.GREEN, f'{message.channel._name}:')
                 print(Fore.RED,f'{message.author.display_name}: {message.content}')
@@ -348,7 +364,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
             
-            if colorI4 == 3 and message.channel._name == test[3] and message.author._name != "nightbot":
+            if colorI4 == 3 and message.channel._name == test[3] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.RED,"-----------------------------------------------------------------")
                 print(Fore.CYAN, f'{message.channel._name}:')
                 print(Fore.RED,f'{message.author.display_name}: {message.content}')
@@ -356,7 +372,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
 
-            if colorI5 == 3 and message.channel._name == test[4] and message.author._name != "nightbot":
+            if colorI5 == 3 and message.channel._name == test[4] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.RED,"-----------------------------------------------------------------")
                 print(Fore.MAGENTA, f'{message.channel._name}:')
                 print(Fore.RED,f'{message.author.display_name}: {message.content}')
@@ -364,7 +380,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
             
-            if colorI6 == 3 and message.channel._name == test[5] and message.author._name != "nightbot":
+            if colorI6 == 3 and message.channel._name == test[5] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.RED,"-----------------------------------------------------------------")
                 print(Fore.WHITE, f'{message.channel._name}:')
                 print(Fore.RED,f'{message.author.display_name}: {message.content}')
@@ -372,7 +388,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
 
-            if colorI7 == 3 and message.channel._name == test[6] and message.author._name != "nightbot":
+            if colorI7 == 3 and message.channel._name == test[6] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.RED,"-----------------------------------------------------------------")
                 print(Fore.LIGHTMAGENTA_EX, f'{message.channel._name}:')
                 print(Fore.RED,f'{message.author.display_name}: {message.content}')
@@ -380,7 +396,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
             
-            if colorI8 == 3 and message.channel._name == test[7] and message.author._name != "nightbot":
+            if colorI8 == 3 and message.channel._name == test[7] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.RED,"-----------------------------------------------------------------")
                 print(Fore.BLUE, f'{message.channel._name}:')
                 print(Fore.LIGHTYELLOW_EX,f'{message.author.display_name}: {message.content}')
@@ -388,7 +404,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
             
-            if colorI9 == 3 and message.channel._name == test[8] and message.author._name != "nightbot":
+            if colorI9 == 3 and message.channel._name == test[8] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.RED,"-----------------------------------------------------------------")
                 print(Fore.LIGHTBLUE_EX, f'{message.channel._name}:')
                 print(Fore.RED,f'{message.author.display_name}: {message.content}')
@@ -396,7 +412,7 @@ elif start == "y":
                 print(" ")
                 print(Style.RESET_ALL)
 
-            if colorI10 == 3 and message.channel._name == test[9] and message.author._name != "nightbot":
+            if colorI10 == 3 and message.channel._name == test[9] and message.author._name != "nightbot" and message.author._name != "streamelements":
                 print(Fore.RED,"-----------------------------------------------------------------")
                 print(Fore.LIGHTGREEN_EX, f'{message.channel._name}:')
                 print(Fore.RED,f'{message.author.display_name}: {message.content}')
@@ -484,6 +500,7 @@ elif start == "y":
             love = random.randint(1,100)
             await ctx.send(f'{ctx.author.name} is {love}% compatable with {val}')
         
+
         #this command only to be used if the streamer wants to shout out the creator. 
         @commands.command()
         async def support(self, ctx: commands.Context):

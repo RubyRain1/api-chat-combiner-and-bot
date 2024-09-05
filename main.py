@@ -5,7 +5,12 @@ import random
 import time
 from colorama import init
 from colorama import Fore, Back, Style
+import sys
 
+#initialize colorama
+if sys.platform == "win32":
+    init(autoreset=True)
+    
 # this is the introduction of a terminal based ui incase I cannot implement a working GUI
 print('''
  _________      _         _        _____ _           _      _____                _     _                 
